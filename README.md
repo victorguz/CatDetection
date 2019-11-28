@@ -1,2 +1,2 @@
-# pyCatLearning
-Aplicación de reconocimiento facial de gatos. 
+# CatDetection
+Aplicación de reconocimiento facial de gatos. Reconoce 5 razas de gatos: Persa, azul ruso, scottish fold, toyger y siames. Se utilizan al menos 100 imágenes de cada gato, recortadas a blanco y negro y color serían 1000 imágenes en total. También puede reconocer la raza Sphynx, pero por ser un una raza poco caracteristica (no posee los mismos patrones) suele fallar con algunas imágenes.
