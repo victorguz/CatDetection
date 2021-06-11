@@ -51,14 +51,14 @@ def get_images_and_labels(path):
 
 
 # Ruta a la base de datos de entrenamiento
-path = 'personas'
+path = 'pro_entreno'
 # Llamado a la función get_images_and_labels para obtener las imágenes de los rostros de gatos y las
 # etiquetas correspondientes
 images, labels = get_images_and_labels(path)
 # Realizar el entrenamiento
 recognizer.train(images, np.array(labels))
 # Ruta a la base de datos de prueba
-path2 = 'personas2'
+path2 = 'pro_identificar'
 # Se agregan las imágenes de prueba (con extension _d) a la lista image_paths
 image_paths = [os.path.join(path2, f) for f in os.listdir(path2)]
 k=0
@@ -89,7 +89,7 @@ for image_path in image_paths:
         cv2.rectangle(predict_image, (x, y), (x + w, y + h), (255, 0, 0), 2)
         cv2.putText(predict_image, "GATO "+n,
                     (x, y+h+20), 0, 0.55, (0, 255, 0), 2)
-        cv2.imwrite(n+repr(k)+".jpg",predict_image)
+        cv2.imwrite(n+repr(k)+".jpg", predict_image)
         cv2.imshow("Gato reconocido", predict_image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
